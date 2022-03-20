@@ -1,0 +1,54 @@
+Details (Prepared by Leyla Yayladere)
+
+Story (Quoted from Santa Claus): "As the year draws to a close, I have lots of gifts to give but I don’t have an optimal
+arrangement to distribute them. Let’s try together not to leave empty under the Christmas tree as
+much as possible. All I want for the new year, Cmpe students who make everything easier with
+their algorithms."
+
+• There are two kinds of regions, which we call the green region and the red region.
+Therefore, trains and reindeers can be classified as those going to the green region and
+the red region.
+
+• Our gifts are in the bags, and we should distribute them to trains and reindeers
+according to the properties of the bag. You can consider that the same type of gifts is in
+the same bag, and we want to distribute them properly.
+
+• Properties of bags are as follow, remark that one bag has more than one property:
+  a. Each of the gifts in this bag type should be distributed through different vehicles,
+i.e. there are no 2 gifts from the same bag on the same train or reindeer.
+  b. Each of the gifts in this bag type should only be distributed to green regions.
+  c. Each of the gifts in this bag type should only be distributed to red regions.
+  d. Each of the gifts in this bag type should only be distributed by train.
+  e. Each of the gifts in this bag type should only be distributed by reindeer.
+
+• If it’s not specified, assume that gifts can be distributed to all regions, and both by train
+and reindeer.
+
+• Let’s look at some examples of bag types.
+bd  | Can be distributed only by trains which go to green regions.
+ace | Can be distributed only by reindeers which go to red regions and there are no 2 gifts from this bag on the same reindeer.
+c   | Can be distributed only to red regions, both by trains and reindeers.
+d   | Can be distributed only by trains, to both the red and the green regions.
+a   | Only constraint is that there are no 2 gifts from this bag on the same vehicle.
+bc  | Invalid, it won’t be given as an input to you because it is a contradictory.
+de  | Invalid, it won’t be given as an input to you because it is a contradictory.
+
+How to compile:
+javac ./ford-fulkerson-algorithm.java -d . -release 17
+How to run:
+java ford-fulkerson-algorithm <inputfile> <outputfile>
+
+Input format (examine sample):
+1                            | The number of trains that go to green region.
+3                            | Capacity of each train.
+2                            | The number of trains that go to red region.
+1 9                          | Capacity of each train.
+0                            | The number of reindeers that go to green region.
+                             | If there is no such reindeer this line will be empty.
+1                            | The number of reindeers that go to red region.
+2                            | Capacity of each reindeers.
+4                            | The number of gift types, i.e. number of bags.
+ac 6 be 3 cd 4 ad 8          | Types of bags and numbers of gifts in them respectively.
+
+Output format (examine sample):
+12                           | The number of gifts that cannot be distributed. (Total amount of gift is 21, 9 is distributed.)
