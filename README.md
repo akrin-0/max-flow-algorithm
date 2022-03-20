@@ -1,1 +1,2 @@
-# ethod-to-implement-ford-fulkerson-algorithm
+# Algorithm of Ford Fulkerson
+This project implements Ford Fulkerson's algorithm to achieve the maximum flow in a graph with a given source and a destination.
